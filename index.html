@@ -1,0 +1,355 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Wine Guide</title>
+	<meta name="description" content="Good Grapes: A complete wine guide" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- GOOGLE FONTS -->
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Yeseva+One&display=swap" rel="stylesheet">
+
+	<!-- Load CSS libraries -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/leaflet.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- main container -->
+<main style="background: #262626">
+
+	<header class="masthead">
+		<div class="container h-100">
+			<div class="row h-100 align-items-center justify-content-center text-center">
+				<div class="col-lg-10 align-self-end">
+					<h1 class="text-white">Your Voyage Through Vino</h1>
+					<hr class="divider my-4" />
+				</div>
+				<br>
+				<div class="col-lg-8 align-self-baseline">
+					<h4 class="text-white mb-5">
+						For both seasoned drinkers and curious newcomers, the world of wine can seem overly complex and pretentious.
+						But these fermentation processes transcend centuries, geographies, and cultures - anyone can enjoy a glass of wine that fits their lifestyle.
+						Take a trip with us to learn about the factors that might influence the color, taste, and mouthfeel of your favorite vintages.
+					</h4>
+				</div>
+				<div class="col-lg-8 align-self-baseline">
+					<h5 class="text-white font-weight-bold mb-5">
+						SCROLL TO CONTINUE
+					</h5>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section id="scrolly" style="background: #262626;">
+		<figure>
+			<div class="row justify-content-center">
+				<div class="col-md-11">
+					<div id="sections-vis"></div>
+				</div>
+			</div>
+		</figure>
+
+		<article>
+			<div class="step" data-step="1">
+				<p>Did you know that the climate in which grapes grow affects the qualities of each wine? For this
+					reason, wine regions are classified as either <strong style="color: #FF7373">Warm </strong>
+					or <strong style="color: #72D4FF">Cool.</strong></p>
+			</div>
+			<div style="height: 400px"></div>
+			<div class="step" data-step="2">
+				<p>In <strong style="color: #FF7373">warm regions</strong>, the slow temperature drop from summer into
+					fall gives grapes ample time to fully ripen. However, this longer transition also makes grapes
+					lose their natural acidity over time.</p>
+			</div>
+			<div style="height: 400px"></div>
+			<div class="step" data-step="3">
+				<p>In <strong style="color: #72D4FF">cool regions</strong>, the temperature drops off so quickly towards
+					harvest that it is difficult for grapes to ripen. However, lower temperatures help preserve the grapes'
+					acidity.</p>
+			</div>
+			<div style="height: 150px"></div>
+		</article>
+	</section>
+
+	<div class="outro" style="height: 34vh; background-color: #262626"></div>
+
+	<section class="page-section">
+		<div class="row justify-content-center" style="height: 5%; width:100%">
+			<div class="col-lg-8 text-justify">
+				<h4 class="text-light mt-0"><strong>But how does acidity affect the taste of wine? </strong><br>
+					<br>
+					A wine with high acid will usually taste crisper and more tart on the palate, while a low-acid wine will feel smoother and rounder on the palate.
+					Dryness is often confused with acidity and wine, but it really refers to the amount of residual sugar or carbohydrates left in the product after
+					the fermentation process has ended. The pH scale and dryness scale help clarify this relationship.<br></h4>
+			</div>
+		</div>
+		<div id="barcarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+			<div class="container" style="height: 50vh;">
+				<ol id="myCarousel-indicators" class="carousel-indicators">
+					<li data-target="#barcarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#barcarousel" data-slide-to="1"></li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<div class="row justify-content-center">
+							<div class="col-md-11">
+								<div id="barsVis"></div>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="row justify-content-center">
+							<div class="col-md-11">
+								<div id="dryness-scale"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#barcarousel" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#barcarousel" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!--Flipping Cards Section-->
+	<section class="page-section">
+		<div class="container" style="height: 150vh;">
+			<div class="row justify-content-center">
+				<div class="col-lg-8 text-justify">
+					<p class="text-light mt-0"><br>The data you'll be exploring was scraped from Wine Magazine’s website in 2017 and consists of
+						just under 120 thousand wine reviews across 19 countries. As you explore the data you will be able
+						to filter the wine reviews by country of origin and the wines' style, color, and sweetness level.<br><br></p>
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="flip-card">
+									<div class="flip-card-inner">
+										<div class="flip-card-front bg-dark">
+											<p>What is wine color?</p>
+										</div>
+										<div class="flip-card-back bg-dark text-justify">
+											<p style="font-size: 0.78rem">Our dataset included three wine color categories - Red, White, and Rosé - that correspond
+												to the type of grape and level of skin contact in the fermentation process. Red wines are made with
+												red grapes and their skins; White wines are made with white or red grapes with no skins; and Rosé
+												wines are made with red grapes and exposed to their skins for a short period of time.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col">
+								<div class="flip-card">
+									<div class="flip-card-inner">
+										<div class="flip-card-front bg-dark">
+											<p>What is wine style?</p>
+										</div>
+										<div class="flip-card-back bg-dark text-justify">
+											<p style="font-size: 0.78rem">Our dataset included three wine styles, which correspond to the combination of grape types or carbonation.
+												Varietal wines include only one kind of grape; Blend wines include multiple kinds of grapes; Sparkling wines
+												are infused with carbon dioxide after the fermentation process, so that the resulting wine is bubbly.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<p class="text-light mt-0"><br>You've learned about wine regions, climates, and how flavors develop in wine.
+						Now, explore Wine Magazine's nearly 120,000 wine reviews from 19 countries, where
+						you'll be able to filter by country of origin, style, color, and sweetness level.
+						Let your curiosity take you towards wines that pique your interest and palate.<br><br></p>
+					<a href="#dashboardDiv" class="btn btn-dark btn-block align-self-center"><br>Click to Explore the Data<hr class="divider my-4" /></a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- visualizations container  -->
+	<div class="container-fluid">
+
+		<!-- title row -->
+		<div id="dashboardDiv" class="row justify-content-center" style="height: 8vh">
+			<div class="col-sm-2 align-self-center" style="padding-top: 1vh; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh">
+				<button type="button" class="btn btn-dark btn-sm btn-block align-self-center" style="background-color: #090909; border-color: #090909; color: lightgray" onclick="resetSelection()">reset selection</button>
+			</div>
+			<div class="col-md-8 align-self-center" style="padding-top: 1vh; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh">
+				<h4 style="font-family: 'Yeseva One', cursive; color: whitesmoke; text-align: center;">Explore Wine Reviews from Around the World</h4>
+			</div>
+			<div class="col-sm-2 align-self-center" style="padding-top: 1vh; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh">
+				<button type="button" class="btn btn-dark btn-sm btn-block align-self-center" style="background: #090909; border-color: #090909; color: lightgray" onclick="resetSelection()">reset selection</button>
+			</div>
+		</div>
+
+		<!-- visualization row -->
+		<div class="row justify-content-center" style="height: 90vh">
+
+			<!-- country histogram column -->
+			<div class="col-sm-1 align-self-center" style="height: 100%; width:100%">
+				<div id="countryBar" style="height: 100%; width:100%; padding-top: 1vh; padding-left: 1vw; padding-bottom: 1vh"></div>
+			</div>
+
+			<!-- visualization column -->
+			<div class="col-10">
+
+				<!-- scatterplot, brush, and bubble visualization row -->
+				<div class="row justify-content-center" style="height: 55%">
+
+					<!-- scatterplot and brush visualization column -->
+					<div class="col-8">
+
+						<!-- scatterplot visualization row -->
+						<div class="row justify-content-center" style="height: 78%">
+							<div class="col-md-12 align-self-center" style="height: 100%; width:100%; padding-top: 1vh; padding-left: 1vw; padding-right: 1vw">
+								<!--								<button type="button" class="btn btn-dark btn-sm btn-block align-self-center" onclick="generateData()">new random selection</button>-->
+								<div id="scatter-vis" style="height: 100%; width:100%"></div>
+							</div>
+						</div>
+
+						<!-- brush visualization row -->
+						<div class="row justify-content-center" style="height: 22%">
+							<div class="col-md-12 align-self-center" style="height: 100%; width:100%; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh">
+								<div id="brushDiv" style="height: 100%; width:100%;"></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- bubble visualization column -->
+					<div class="col-md-4 align-self-center" style="height: 100%; padding-top: 1vh; width:100%; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh">
+						<div id="bubble-vis" style="background-image: url('aes/grey vine 370x370-01.png'); background-position: center; background-repeat: no-repeat; background-size: cover; height: 100%; width:100%"></div>
+						<!--						<div id="bubble-vis" style="height: 100%; width:100%"></div>-->
+					</div>
+				</div>
+
+				<!-- map and image visualization row -->
+				<div class="row justify-content-center" style="height: 45%">
+
+					<!-- map visualization column -->
+					<div class="col-md-6 align-self-center" style="height: 100%; width:100%; padding-top: 1vh; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh">
+						<div id="mapDiv" style="height: 100%; width:100%"></div>
+					</div>
+
+					<!-- image visualization column -->
+					<div class="col-md-6 align-self-center" style="height: 100%; width:100%">
+						<div id="country-image" class="align-self-center" role="img" style="<!--background: white;--> height: 100%; width:100%; padding-top: 1vh; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh"></div>
+					</div>
+				</div>
+			</div>
+
+			<!-- style, color, sweetness histogram column -->
+			<div class="col-sm-1 align-self-center" style="height: 100%; width:100%; padding-top: 1vh; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh">
+
+				<!-- style histogram row -->
+				<div class="row justify-content-center" style="height: 32%">
+					<div id="styleBar" style="height: 100%; width:100%"></div>
+				</div>
+				<!-- color histogram row -->
+				<div class="row justify-content-center" style="height: 28%">
+					<div id="colorBar" style="height: 100%; width:100%"></div>
+				</div>
+				<!-- sweetness histogram row -->
+				<div class="row justify-content-center" style="height: 40%">
+					<div id="sweetnessBar" style="height: 100%; width:100%"></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Visualization footer row -->
+		<div class="row justify-content-center" style="height: 5vh">
+			<!--			<div class="col-md-12"></div>-->
+		</div>
+	</div>
+
+	<!-- Contact-->
+	<section class="contact-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100" style="background: #090909">
+						<div class="card-body text-center">
+							<i class="fas fa-envelope text-primary mb-2"></i>
+							<h4 class="text-uppercase m-0 text-white-50">Rebecca Brand</h4>
+							<hr class="divider my-4" />
+							<div class="small text-white-50">rbrand@mde.harvard.edu</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100" style="background: #090909">
+						<div class="card-body text-center">
+							<h4 class="text-uppercase m-0 text-white-50">Bianca Cordazzo</h4>
+							<hr class="divider my-4" />
+							<div class="small text-white-50">bi.cordazzo@gmail.com</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 mb-3 mb-md-0">
+					<div class="card py-4 h-100" style="background: #090909">
+						<div class="card-body text-center">
+							<h4 class="text-uppercase m-0 text-white-50">Fernando Medeiros</h4>
+							<hr class="divider my-4" />
+							<div class="small text-white-50">fem433@g.harvard.edu</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row justify-content-center" style="height: 20vh;">
+			<div class="col-md-3 align-self-center text-center" style="padding-top: 1vh; padding-left: 1vw; padding-right: 1vw; padding-bottom: 1vh">
+				<a class="btn btn-dark btn-sm btn-block active" style="background-color: #090909; color: gray" role="button" href="processBook.html" target="_blank" aria-pressed="true"><br>PROCESS BOOK<hr class="divider my-4" /></a>
+			</div>
+		</div>	</section>
+
+</main>
+
+<!-- <div class='debug'></div> -->
+<script src="https://unpkg.com/d3@5.9.1/dist/d3.min.js"></script>
+<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+<!-- embedding JS libraries -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+<!-- d3 libraries -->
+<script src="https://d3js.org/d3.v6.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/topojson.v2.min.js"></script>
+<script src="https://d3js.org/d3-geo.v1.min.js"></script>
+<script src="https://d3js.org/d3-voronoi.v1.min.js"></script>
+
+<!-- leaflet js libraries -->
+<script src="js/leaflet.js"></script>
+
+<!-- Scrollytelling -->
+<script src="js/scrollama.min.js"></script>
+<script src="js/sections.js"></script>
+<script src="js/stickyfill.min.js"></script>
+
+<!-- Visualization objects -->
+<script src="js/barsVis.js"></script>
+<script src="js/brushVis.js"></script>
+<script src="js/circularVis.js"></script>
+<script src="js/colorBarVis.js"></script>
+<script src="js/countryBarVis.js"></script>
+<script src="js/drynessScaleVis.js"></script>
+<script src="js/imageVis.js"></script>
+<script src="js/mapVis.js"></script>
+<script src="js/scatterVis.js"></script>
+<script src="js/styleBarVis.js"></script>
+<script src="js/sweetnessBarVis.js"></script>
+
+<!-- own js files -->
+<script src="js/main.js"></script>
+</body>
+</html>

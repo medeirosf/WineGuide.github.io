@@ -1,0 +1,509 @@
+/* CSS Stylesheet */
+
+html, body, #sections-vis #mapDiv{
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    /*min-height: 1280px;*/
+    color: #3b3b3b;
+    font-size: 24px;
+    shape-rendering: crispEdges;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+}
+
+p, h1, h2, h3, h4, a {
+    margin: 0;
+    font-weight: 400;
+}
+
+h2, h3 {
+    page-break-after: avoid;
+}
+
+h2, .h2 {
+    font-size: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 200;
+    line-height: 1.2;
+}
+
+.locnames {
+    fill: black;
+    text-shadow: 1px 1px 1px #FFF, 3px 3px 5px #000;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.scatterplot-title,
+.bubble-title {
+    font-size: 1.1vw;
+    font-family: Montserrat; /*'Yeseva One', cursive;*/
+    font-weight: 200;
+    fill: whitesmoke;
+    shape-rendering: crispEdges;
+}
+
+/* scatterplot tooltip title */
+
+.bold-text {
+    font-weight: bold;
+}
+
+.brush-title,
+.y-axis-lable {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8vw;
+    fill: darkgrey;
+    text-anchor: middle;
+    shape-rendering: crispEdges;
+}
+
+.bar-title {
+    font-family: 'Yeseva One', cursive;
+    font-size: 0.8vw;
+    /*fill: ghostwhite;*/
+    fill: whitesmoke;
+    font-weight: bold;
+    shape-rendering: crispEdges;
+}
+
+.legend-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: .75vw;
+    fill: darkgrey;
+    /*font-weight: bold;*/
+    shape-rendering: crispEdges;
+}
+
+.color-text,
+.country-text,
+.style-text,
+.sweetness-text {
+    font-family: 'Montserrat', sans-serif;
+    shape-rendering: crispEdges;
+}
+
+.legend-rect,
+.legend-symbol,
+.node,
+.path,
+.style-rect,
+.color-rect,
+.country-rect,
+.style-rect,
+.sweetness-rect {
+    shape-rendering: geometricPrecision;
+}
+
+.axis {
+    color: gray;
+    /*font-weight: bold;*/
+    shape-rendering: crispEdges;
+}
+
+.domain {
+    stroke: #E8E8E8;
+    opacity: 0.6;
+}
+
+.tick line {
+    stroke: #E8E8E8;
+    opacity: 0.6;
+}
+
+/*#countrySelector,*/
+/*#styleSelector,*/
+/*#colorSelector,*/
+/*#sweetnessSelector {*/
+/*    font-size: 1vw;*/
+/*}*/
+
+/* map tooltip */
+.info {
+    font-family: 'Montserrat', sans-serif;
+    padding: 6px 8px;
+    /*font-size: 12px;*/
+    background: white;
+    background: rgba(255,255,255,0.6);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+/* end of map tooltip */
+
+/* map legend */
+.map_legend {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 18px;
+    color: darkgrey;
+    font-size: 12px;
+}
+.map_legend i {
+    font-family: 'Montserrat', sans-serif;
+    width: 15px;
+    height: 16px;
+    float: left;
+    margin-right: 8px;
+    opacity: 1;
+}
+/* end of map legend */
+
+/* scrollytelling */
+#scrolly {
+    position: relative;
+    background-color: white;
+}
+
+article {
+    position: relative;
+    padding: 0;
+    max-width: 30rem;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+
+figure {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    z-index: 0;
+}
+
+#sections-vis {
+    height: 600px;
+}
+
+#mapDiv {
+    height: 500px;
+}
+
+.step {
+    margin: 0 auto 2rem auto;
+    opacity: 0.1;
+    color: black;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.step:last-child {
+    margin-top: 0;
+}
+
+.step.is-active {
+    opacity: 1;
+}
+
+.step p {
+    text-align: justify;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, a {
+    margin: 0;
+    font-weight: 400;
+}
+
+/*
+a, a:visited, a:hover {
+    color: teal;
+    text-decoration: none;
+    border-bottom: 2px solid currentColor;
+}
+ */
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+    0%, 100% {
+        transform: rotate(0);
+    }
+
+    20%, 60% {
+        transform: rotate(-25deg);
+    }
+
+    40%, 80% {
+        transform: rotate(10deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .github-corner:hover .octo-arm {
+        animation: none;
+    }
+
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out;
+    }
+}
+
+@media (min-width: 840px) {
+    .nav__examples {
+        margin-top: 0;
+        margin-left: 2rem;
+    }
+}
+
+/* end of scrollytelling */
+
+/* start of image styles */
+
+.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 1vw;
+}
+
+/* end of image styles */
+
+/* header */
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url("../img/Wine_Graphic.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+}
+header.masthead h1 {
+    font-family: 'Yeseva One', cursive;
+    font-size: 3.25rem;
+}
+
+header.masthead h4 {
+    font-family: 'Montserrat', sans-serif;
+    /*background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);*/
+}
+
+header.masthead h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+
+@media (min-width: 992px) {
+    header.masthead {
+        height: 100vh;
+        min-height: 40rem;
+        padding-top: 4.5rem;
+        padding-bottom: 0;
+    }
+    header.masthead p {
+        font-size: 1.15rem;
+    }
+    header.masthead h1 {
+        font-size: 3rem;
+    }
+}
+@media (min-width: 1200px) {
+    header.masthead h1 {
+        font-size: 3.5rem;
+    }
+}
+
+.text-white {
+    color: #fff !important;
+}
+
+.text-white-75 {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+hr.divider {
+    max-width: 3.25rem;
+    border-width: 0.2rem;
+    border-color: #7e002f;
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important;
+}
+
+.font-weight-light {
+    font-weight: 300 !important;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.cursive {
+    font: 130px 'Great Vibes', Helvetica, sans-serif;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+}
+
+.page-section {
+    padding: 8rem 0;
+}
+
+.bg-primary {
+    background-color: #722f37 !important;
+}
+
+.bg-transition {
+    /*background-color: #E36F64 !important;*/
+    background-color: #090909 !important;
+}
+
+.mt-0,
+.my-0 {
+    margin-top: 0 !important;
+}
+
+
+.para-text {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+.contact-section {
+    padding-top: 5rem;
+}
+.contact-section .card {
+    border: 0;
+    border-bottom: 0.25rem solid #7e002f;
+}
+.contact-section .card h4 {
+    font-size: 0.8rem;
+    font-family: "Montserrat", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+}
+.contact-section .card hr {
+    border-color: #7e002f;
+    border-width: 0.25rem;
+    width: 3rem;
+}
+
+.bg-black {
+    background-color: #000000 !important;
+}
+
+.col-md-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+    flex: 0 0 33.3333333333%;
+    max-width: 33.3333333333%;
+}
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+.mb-md-0 {
+    margin-bottom: 0 !important;
+}
+
+.leaflet-tile-container img {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+#myCarousel-indicators > li {
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+.text-light {
+    color: lightgrey !important;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    border-radius: 10px;
+    margin: auto;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: dimgrey;
+    color: white;
+    font-size: 30px;
+    font-family: Yeseva One, cursive;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: dimgrey;
+    color: white;
+    font-size: 12px;
+    font-family: Montserrat, sans-serif;
+    transform: rotateY(180deg);
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    vertical-align: middle;
+    border-radius: 10px;
+}
